@@ -1,6 +1,7 @@
 package com.avijeet.openshelf.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,7 @@ public class Member {
     private String name;
 
     @NotBlank(message = "Email is required")
+    @Email(message = "Email is not valid")
     @Column(nullable = false, unique = true)
     private String email;
 

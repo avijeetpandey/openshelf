@@ -1,6 +1,7 @@
 package com.avijeet.openshelf.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,10 +19,11 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "author name is required")
+    @NotBlank(message = "Author name is required")
     private String name;
 
-    @NotBlank(message = "email is required")
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email is not valid")
     @Column(unique = true)
     private String email;
 
