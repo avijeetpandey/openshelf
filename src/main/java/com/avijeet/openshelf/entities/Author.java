@@ -27,6 +27,8 @@ public class Author {
     @Column(unique = true)
     private String email;
 
+    private String bio;
+
     // managing relationships
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<Book> books;
