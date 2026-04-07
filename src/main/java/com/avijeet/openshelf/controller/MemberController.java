@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class MemberController extends BaseController {
     private final MemberService memberService;
 
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<ApiResponse<MemberResponseDto>> addMember(@Valid @RequestBody MemberRequestDto dto) {
         MemberResponseDto response = memberService.addMember(dto);
         return ok(Constants.SUCCESS_MESSAGE, response);
